@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <style>
+    body {
+      margin: 0;
+      background: #ffffff;
+      overflow: hidden;
+    }
+
+    body {
+      background: url('/Milkmaid.jpg') no-repeat center center fixed;
+      background-size: cover;
+    }
+
+    .outlined {
+      color: white;
+      /* Text fill color  -webkit-text-stroke: 2px #352e5a;*/
+     
+      
+
+      text-shadow:
+        -4px -4px 0 black,
+        4px -4px 0 black,
+        -4px 4px 0 black,
+        4px 4px 0 black;
+      /* Outline width and color */
+      /* text-stroke: 2px black;  <-- non-prefixed version for browsers that support it */
+    }
+
+
+    p {
+      position: relative;
+      color: rgb(0, 0, 0);
+      font-family: monospace;
+      width: 90%;
+      margin: 0 auto;
+      text-align: center;
+      font-size: 4rem;
+      /* Adjust the font size as needed */
+      padding: 1rem;
+    }
+
+    #author,
+    #demo {
+      font-size: 3rem;
+
+    }
+
+    #countdown {
+      position: relative;
+      font-family: monospace;
+      width: 90%;
+      margin: 0 auto;
+      text-align: center;
+      font-size: 6rem;
+      /* Adjust the font size as needed */
+      padding: 1rem;
+    }
+  </style>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Vite App</title>
+</head>
+
+<body>
+  <div id="app"></div>
+  <p id="author" class="outlined">Jaroslaw Solecki, </p>
+  <p class="outlined">‘Milkmaid's pitcher’ – Born-Digital Multimodal Art Project</p>
+  <p id="demo" class="outlined">Content of the DEMO will be available on April 3nd, 2025.</p>
+  <div id="countdown" class="outlined"></div>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+
+</html>
