@@ -1,7 +1,7 @@
 body {
   margin: 0;
   background: #ffffff;
-  overflow: hidden;
+  overflow: hidden; /* Hides scrollbars on desktop */
 }
 
 body {
@@ -11,19 +11,13 @@ body {
 
 .outlined {
   color: white;
-  /* Text fill color  -webkit-text-stroke: 2px #352e5a;*/
- 
-  
-
+  /* Using text-shadow to simulate an outline */
   text-shadow:
     -4px -4px 0 black,
     4px -4px 0 black,
     -4px 4px 0 black,
     4px 4px 0 black;
-  /* Outline width and color */
-  /* text-stroke: 2px black;  <-- non-prefixed version for browsers that support it */
 }
-
 
 p {
   position: relative;
@@ -33,14 +27,12 @@ p {
   margin: 0 auto;
   text-align: center;
   font-size: 4rem;
-  /* Adjust the font size as needed */
   padding: 1rem;
 }
 
 #author,
 #demo {
   font-size: 3rem;
-
 }
 
 #countdown {
@@ -50,6 +42,29 @@ p {
   margin: 0 auto;
   text-align: center;
   font-size: 6rem;
-  /* Adjust the font size as needed */
   padding: 1rem;
+}
+
+/* Media query for mobile devices */
+@media (max-width: 600px) {
+  /* Allow vertical scrolling on smaller devices */
+  body {
+    overflow-y: auto;
+  }
+  
+  /* Reduce overall font sizes and padding */
+  p {
+    font-size: 2rem;
+    padding: 0.5rem;
+  }
+  
+  #author,
+  #demo {
+    font-size: 1.5rem;
+  }
+  
+  #countdown {
+    font-size: 3rem;
+    padding: 0.5rem;
+  }
 }
