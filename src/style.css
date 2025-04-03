@@ -1,12 +1,26 @@
 body {
   margin: 0;
   background: #ffffff;
-  overflow: hidden; /* Hides scrollbars on desktop */
+  overflow: hidden;
+  /* Hides scrollbars on desktop 
+  background: url('/Milkmaid.jpg') no-repeat center center fixed;
+  background-size: cover;*/
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  background: black;
+
 }
 
-body {
-  background: url('/Milkmaid.jpg') no-repeat center center fixed;
-  background-size: cover;
+.slide-video {
+  height: 100vh;
+  max-width: 100vw;
+  display: block;
+  margin: 0 auto;
+  filter: sepia(0.99) brightness(0.6) contrast(0.79);
+}
+
+
+body.no-background {
+  background: black !important;
 }
 
 .outlined {
@@ -19,9 +33,9 @@ body {
     4px 4px 0 black;
 }
 
-p {
+#intro p {
   position: relative;
-  color: rgb(0, 0, 0);
+  color: rgb(242, 242, 242);
   font-family: monospace;
   width: 90%;
   margin: 0 auto;
@@ -47,24 +61,260 @@ p {
 
 /* Media query for mobile devices */
 @media (max-width: 600px) {
+
   /* Allow vertical scrolling on smaller devices */
   body {
     overflow-y: auto;
   }
-  
+
   /* Reduce overall font sizes and padding */
   p {
     font-size: 2rem;
     padding: 0.5rem;
   }
-  
+
   #author,
   #demo {
     font-size: 1.5rem;
   }
-  
+
   #countdown {
     font-size: 3rem;
     padding: 0.5rem;
   }
+}
+
+/* Base styles for mobile: images stacked */
+.image-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+  /*optional spacing between images */
+}
+
+.image-container img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Desktop: two-column grid for side-by-side images */
+@media (min-width: 768px) {
+  .image-container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.slide {
+  display: none;
+}
+
+.slide.active {
+  display: block;
+}
+
+.button-container {
+  position: fixed;
+  /* Keeps the buttons at the top even on scroll */
+  top: 10px;
+  /* Adjust the distance from the top as needed */
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  /* Spacing between buttons */
+  z-index: 1000;
+  /* Ensures the buttons stay above other content */
+}
+
+/* Existing button styling */
+button {
+  padding: 5px 10px;
+  font-size: 16px;
+}
+
+@media (max-width: 600px) {
+  button {
+    padding: 10px 20px;
+    font-size: 1em;
+  }
+}
+
+.image-99 {
+  width: 99%;
+  display: block;
+  margin: 0 auto;
+}
+
+.iframe-style {
+  width: 90vw;
+  /* 90% of the viewport width */
+  height: 90vh;
+  /* Adjust the height as needed */
+  border: 5px solid black;
+  display: block;
+  margin: 0 auto;
+  /* This centers the iframe horizontally */
+}
+
+/* "Visit original" button styling */
+.visit-original-container {
+  margin-top: 10px;
+  text-align: center;
+}
+
+.visit-original-button {
+  display: inline-block;
+  padding: 5px 10px;
+  font-size: 16px;
+  background-color: #f0f0f0;
+  /* Optional background color */
+  border: 1px solid black;
+  text-decoration: none;
+  color: black;
+  border-radius: 4px;
+  margin-top: 2.5em;
+}
+
+.image-column-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  /* Optional: spacing between images */
+  max-height: 100vh;
+  /* Adjust as needed (e.g., 80vh or a fixed pixel value) */
+  overflow-y: auto;
+  /* Enable vertical scrolling when content overflows */
+}
+
+.image-column-container img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.slide-description {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: 95%;
+  padding: 1rem 2rem;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  font-size: 1.5rem;
+  border-radius: 10px;
+  z-index: 2000;
+  text-align: center;
+  cursor: move; /* 👈 Show that it's draggable */
+}
+
+/* Make sure .slide is relatively positioned for absolute text overlay */
+.slide {
+  position: relative;
+}
+@media (max-width: 600px) {
+  .slide-description {
+    width: 90%;
+    font-size: 1rem;
+    padding: 0.5rem 0.5rem;
+  }
+}
+.description-nav {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.description-qrcode {
+  width: 70px;
+  height: 70px;
+  border: 2px solid white;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(255,255,255,0.3);
+}
+
+.image-column-container .description-qrcode {
+  width: 70px !important;
+  height: 70px !important;
+  object-fit: contain;
+  display: inline-block !important;
+}
+
+
+.description-nav button {
+  padding: 8px 16px;
+  font-size: 1rem;
+  background-color: #ffffff;
+  color: #000;
+  border: 2px solid black;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.4);
+}
+
+.description-nav button:hover {
+  background-color: #f0f0f0;
+}
+.slide-description {
+  cursor: grab;
+}
+
+.slide-description.dragging {
+  cursor: grabbing !important;
+}
+/* All unvisited links */
+a {
+  color: #1e90ff; /* Dodger Blue */
+  text-decoration: none;
+}
+
+/* On hover */
+a:hover {
+  color: #ffcc00; /* Gold on hover */
+  text-decoration: underline;
+}
+
+/* Visited links */
+a:visited {
+  color: #800080; /* Purple */
+}
+
+/* Active (while clicking) */
+a:active {
+  color: #ff4500; /* OrangeRed */
+}
+.iframe-slide-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.responsive-iframe {
+  width: 40vw;
+  height: 80vh;
+  border: 5px solid black;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+}
+
+/* Responsive for mobile */
+@media (max-width: 768px) {
+  .responsive-iframe {
+    width: 90vw;
+    height: 90vh;
+  }
+}
+.slide-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover; /* ⬅️ fills the screen, cropping if needed */
+  z-index: -1;       /* ⬅️ places it behind other content */
 }

@@ -2,37 +2,276 @@
 <html lang="en">
 
 <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>‘Milkmaid's pitcher’ – Born-Digital Multimodal Art Project</title>
 
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>‘Milkmaid's pitcher’ – Born-Digital Multimodal Art Project</title>
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Milkmaid's pitcher – Born-Digital Multimodal Art Project" />
+    <meta property="og:description"
+        content="DEMO presented at the Born-Digital Collections, Archives & Memory Conference – 3 April, SAS, University of London" />
+    <meta property="og:image" content="/Milkmaid-og.jpg" />
+    <meta property="og:url" content="https://borndigital.bluepointart.uk/" />
+    <meta property="og:type" content="website" />
 
-  <!-- Open Graph Meta Tags -->
-  <meta property="og:title" content="Milkmaid's pitcher – Born-Digital Multimodal Art Project" />
-  <meta property="og:description" content="DEMO presented at the Born-Digital Collections, Archives & Memory Conference – 3 April, SAS, University of London" />
-  <meta property="og:image" content="/Milkmaid-og.jpg" />
-  <meta property="og:url" content="https://borndigital.bluepointart.uk/" />
-  <meta property="og:type" content="website" />
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Milkmaid's pitcher – Born-Digital Multimodal Art Project" />
+    <meta name="twitter:description"
+        content="DEMO presented at the Born-Digital Collections, Archives & Memory Conference – 3 April, SAS, University of London" />
+    <meta name="twitter:image" content="/Milkmaid-og.jpg" />
 
-  <!-- Twitter Card Meta Tags -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Milkmaid's pitcher – Born-Digital Multimodal Art Project" />
-  <meta name="twitter:description" content="DEMO presented at the Born-Digital Collections, Archives & Memory Conference – 3 April, SAS, University of London" />
-  <meta name="twitter:image" content="/Milkmaid-og.jpg" />
-
-  <!-- Your CSS -->
-  <link rel="stylesheet" href="/src/style.css" />
+    <link rel="stylesheet" href="/src/style.css" />
 
 </head>
 
 <body>
-  <div id="app"></div>
-  <p id="author" class="outlined">Jaroslaw Solecki, </p>
-  <p class="outlined">‘Milkmaid's pitcher’ – Born-Digital Multimodal Art Project</p>
-  <p id="demo" class="outlined">Content of the DEMO will be available on April 3nd, 2025.</p>
-  <div id="countdown" class="outlined"></div>
 
-  <script type="module" src="/src/main.js"></script>
+    <!-- Initial Page -->
+    <div id="intro">
+        <div id="app"></div>
+        <p id="author" class="outlined">Jaroslaw Solecki</p>
+        <p class="outlined">‘Milkmaid's pitcher’ – Born-Digital Multimodal Art Project</p>
+        <p id="demo" class="outlined">Content of the DEMO will be available on April 3nd, 2025</p>
+        <div id="countdown" class="outlined"></div>
+        <img src="/Milkmaid.jpg" class="slide-background" alt="Background Image" />
+
+    </div>
+
+
+    <div id="slides" style="display: none;">
+        <div class="slide">
+            <div class="image-container">
+                <div class="slide-description description-draggable">
+                    <p><strong>About the DEMO</strong></p>
+                    <p>This interactive DEMO is structured as a series of scrollable slides, blending traditional
+                        narrative with immersive media. A draggable <strong>info-panel</strong> overlays each slide,
+                        providing context while allowing viewers to reveal layered visual content beneath. Navigation is
+                        built into the panel via <strong>Next/Prev buttons</strong>.</p>
+                        <p>You can Drag & Move 'About the DEMO' and Play video</p>
+                    <ul>
+                        <li>
+                            <p><strong>Slide 3</strong> embeds a live <strong>3D gallery</strong> via iframe, showcasing
+                                a digital installation inspired by Vermeer’s paintigs. It includes a direct link to the
+                                original project and a <strong>QR code</strong> for launching the gallery on mobile.</p>
+                        </li>
+                        <li>
+                            <p><strong>Slide 5</strong> presents the original <strong>WebGL/WebXR app</strong> used to
+                                generate the NFT collection. This app combines a real-time 3D environment with
+                                <strong>in-browser AR</strong>, enabling spatial interaction and digital sculpture
+                                slicing. It is accessible via link and <strong>best experienced on Android</strong>
+                                using the embedded QR code.
+                            </p>
+                        </li>
+                        <li>
+                            <p><strong>Slide 7</strong> features the <strong>Interactive NFT Viewer</strong> for the
+                                <em>Milkmaid’s Pitcher</em> collection. Visitors can browse all <strong>205 minted
+                                    NFTs</strong>, view associated metadata, and interact with the corresponding
+                                <strong>3D models</strong> in real time.
+                            </p>
+                        </li>
+                    </ul>
+                    <p>The DEMO blurs the boundaries between static documentation and live performance, inviting
+                        audiences to explore, manipulate, and move through digital space as part of the artwork itself.
+                    </p>
+
+                    <div class="description-nav">
+                        <button class="prev-slide" type="button">⟵ Prev</button>
+                        <button class="next-slide" type="button">Next ⟶</button>
+                    </div>
+                </div>
+
+                <video class="slide-video" controls preload="auto" playsinline>
+                    <source src="/demo-pitchers-compr.mp4" type="video/mp4" />
+                    Your browser does not support the video tag.
+                </video>
+
+
+            </div>
+        </div>
+        <div class="slide">
+            <div class="image-container">
+                <div class="slide-description description-draggable">
+                    <h1>Born-Digital Genesis – From Concept to Code</h1>
+                    Exploring the transformation of Vermeer’s The Milkmaid into a born-digital sculpture, this project
+                    bridges classical art with contemporary digital expression. The pitcher, drawn from a quiet
+                    historical scene, becomes the centre of a multimodal exploration of memory, form, and digital
+                    presence. Inspired by Vermeer’s stillness, Milkmaid’s pitcher reimagines the familiar vessel as a
+                    symbolic and sculptural digital object. Its journey begins in code, where layers of association and
+                    reinterpretation unfold in an interactive, performative space.
+                    <div class="description-nav">
+                        <button class="prev-slide" type="button">⟵ Prev</button>
+                        <button class="next-slide" type="button">Next ⟶</button>
+                    </div>
+                </div>
+                <img src="/Johannes_Vermeer.png" alt="Johannes Vermeer 'Milkmaid'">
+                <img src="/Milkmaid.jpg" alt="Jaroslaw Solecki 'Milkmaid's pitcher'">
+            </div>
+        </div>
+        <div class="slide">
+            <div class="image-column-container">
+                <div class="slide-description description-draggable">
+                    <h1>The Dystopia of Imitation – Failure as Form</h1>
+                    Through 3D scanning and digital sculpting, the project embraces the imperfect. Real-world objects
+                    are scanned and transformed, often deformed in unexpected ways. These glitches are not
+                    corrected—they are celebrated as creative material. In Milkmaid’s pitcher, failure becomes a method.
+                    It subverts traditional expectations of representation, offering a new kind of abstraction. The
+                    digital artefact mutates, melts, and slips away from mimesis, creating room for affect, concept, and
+                    poetic dislocation.
+
+                    <div class="description-nav">
+                        <button class="prev-slide" type="button">⟵ Prev</button>
+                        <button class="next-slide" type="button">Next ⟶</button>
+                    </div>
+                </div>
+                <img src="/pitcher_demo1.jpg" alt="pitcher_demo">
+                <img src="/pitcher_demo2.jpg" alt="pitcher_demo">
+                <img src="/pitcher_demo3.jpg" alt="pitcher_demo">
+                <img src="/pitcher_demo4.jpg" alt="pitcher_demo">
+                <img src="/pitcher_demo5.jpg" alt="pitcher_demo">
+            </div>
+        </div>
+
+
+
+        <div class="slide">
+
+            <div class="image-column-container">
+                <div class="slide-description description-draggable">
+                    <h1>The Virtual Gallery – A Multimodal Performance</h1>
+                    The sculpture is not displayed—it is performed. Within a custom-built 3D gallery, the pitcher
+                    rotates, responds, and reflects. The gallery itself draws from Vermeer’s interiors, blending
+                    historic ambience with digital fluidity. Viewers navigate through space, encountering the work as
+                    part of a layered, immersive experience. The digital exhibition challenges the notion of a fixed
+                    object, instead offering interaction, play, and transformation. Art becomes an ongoing
+                    event—accessible, decentralised, and participatory.
+                    </br>
+                    <a href="https://dystopiaofimitation.bluepointart.uk/" target="_blank">
+                        <strong>Visit original Dystopia of Imitation website</strong>
+                    </a>
+
+                    <div class="description-nav">
+                        <button class="prev-slide" type="button">⟵ Prev</button>
+
+                        <img src="/dystopiaQrCode.png" alt="QR Code" class="description-qrcode">
+
+                        <button class="next-slide" type="button">Next ⟶</button>
+                    </div>
+                </div>
+                <iframe src="https://dystopiaofimitation.bluepointart.uk/" class="iframe-style"
+                    title="Dystopia of Imitation">
+                </iframe>
+            </div>
+        </div>
+        <div class="slide">
+            <div class="visit-original-container">
+
+            </div>
+            <div class="image-column-container">
+                <div class="slide-description description-draggable">
+                    <h1>Reframing the Milkmaid – Augmented Reality as Remediation</h1>
+                    By extending the sculpture into physical space through AR, Milkmaid’s pitcher bridges digital
+                    creation and embodied experience. The object can be rotated, scaled, and viewed in real-time
+                    settings, dissolving the boundary between virtual and real. In this remediated form, Vermeer’s
+                    pitcher leaves the canvas and enters the present moment. The work invites the viewer not just to
+                    see, but to engage—to become part of a distributed, democratic encounter with art that is no longer
+                    locked inside a frame.<br />
+
+                    <div class="description-nav">
+                        <button class="prev-slide" type="button">⟵ Prev</button>
+                        <button class="next-slide" type="button">Next ⟶</button>
+                    </div>
+                </div>
+                <img src="/01_MilkmaidsPitcher1200.jpg" alt="pitcher_demo">
+                <img src="/04_MilkmaidsPitcher1200.jpg" alt="pitcher_demo">
+                <img src="/MilkmaidsPitcher1200.jpg" alt="pitcher_demo">
+            </div>
+        </div>
+
+        <div class="slide">
+            <div class="iframe-slide-container">
+                <div class="slide-description description-draggable">
+                    <h1>The "Milkmaid's Pitcher" animated sculpture</h1>
+                    In the background, you can see the original WebGL/WebXR application. On mobile devices, it allows
+                    seamless switching between a 3D environment and Augmented Reality (AR).
+                    The object on screen is a rotating digital sculpture — Milkmaid’s Pitcher — dynamically divided by
+                    another invisible, rotating 3D form representing a splash of milk. This intersection creates a dual
+                    experience: part of the sculpture remains in the 3D space, while the other emerges through AR.
+                    Originally, the app could access the visitor's geo-location and capture snapshots of the sculptural
+                    state in real time. Each result — a unique Boolean blend of two forms — was structured with metadata
+                    for minting 205 NFTs, each representing a distinct sculptural moment.
+                    The current version of the app (now with limited functionality due to NFT.storage deprecation) can
+                    still be explored on android mobile devices by clicking
+                    <a href="https://pitcher.bluepointart.uk/" target="_blank">
+                        <strong>here</strong>
+                    </a>, or scan the QR code below with your mobile.
+
+                    <div class="description-nav">
+                        <button class="prev-slide" type="button">⟵ Prev</button>
+
+                        <img src="/pitcher-app.png" alt="QR Code" class="description-qrcode">
+
+                        <button class="next-slide" type="button">Next ⟶</button>
+                    </div>
+
+                </div>
+                <iframe src="https://pitcher.bluepointart.uk/" class="responsive-iframe"
+                    title="Milkmaid’s pitcher site">
+                </iframe>
+            </div>
+        </div>
+
+
+        <div class="slide">
+            <div class="image-column-container">
+                <div class="slide-description description-draggable">
+                    <h1>NFT Integration – Establishing Digital Provenance, Ownership and Aura</h1>
+                    Tokenised as an NFT, the digital sculpture gains a new kind of presence: verified, traceable, and
+                    uniquely owned. The metadata embedded in the NFT contains creation history, edits, and curatorial
+                    context. This not only ensures provenance but redefines what it means for art to have value in
+                    digital space. The aura of the artwork is no longer tied to location but to the transparency and
+                    permanence of its blockchain identity. Ownership becomes decentralised, and the artwork,
+                    immortalised in code, lives on as both object and data.
+
+
+                    <div class="description-nav">
+                        <button class="prev-slide" type="button">⟵ Prev</button>
+                        <button class="next-slide" type="button">Next ⟶</button>
+                    </div>
+                </div>
+                <img src="/MM_NFT_pitcher.jpg" alt="Johannes Vermeer 'Milkmaid'">
+            </div>
+        </div>
+
+        <div class="slide">
+
+            <div class="image-column-container">
+                <div class="slide-description description-draggable">
+                    <h1>Interactive NFT Viewer for "Milkmaid’s Pitcher" Collection</h1>
+                    This web-based viewer presents a collection of 205 NFTs, each minted from a unique digital sculpture
+                    derived from Milkmaid’s Pitcher. Every entry includes structured metadata, along with IPFS-hosted
+                    assets: a preview image and a fully interactive 3D model.
+                    Visitors can explore the entire collection, examine each NFT’s data structure, and engage with the
+                    artworks through intuitive WebGL-based manipulation—zoom, pan, and rotate in real-time.
+                    Designed to bridge visual art, metadata, and decentralized storage, the viewer offers an immersive
+                    look into a generative, blockchain-based sculptural archive.
+
+                    <div class="description-nav">
+                        <button class="prev-slide" type="button">⟵ Prev</button>
+                        <button class="next-slide" type="button">Next ⟶</button>
+                    </div>
+                </div>
+                <iframe src="https://pitchersviewer.bluepointart.uk/" class="iframe-style"
+                    title="Dystopia of Imitation">
+                </iframe>
+            </div>
+        </div>
+
+    </div>
+
+
+
+    <script type="module" src="/src/main.js"></script>
 </body>
 
 </html>
