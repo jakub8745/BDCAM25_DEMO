@@ -11,7 +11,7 @@ const timerInterval = setInterval(updateCountdown, 1000);
 let currentSlide = 0;
 let slideElements = [];
 let slidesInitialized = false;
-let descriptionNavInitialized = false;
+let navButtonsInitialized = false;
 let keyboardNavInitialized = false;
 
 function updateCountdown() {
@@ -55,8 +55,13 @@ function revealSlides() {
     slides.style.display = 'block';
   }
 
+  const arrowContainer = document.getElementById('slide-arrows');
+  if (arrowContainer) {
+    arrowContainer.classList.add('active');
+  }
+
   initSlides();
-  initDescriptionButtons();
+  initNavigationButtons();
   initKeyboardNavigation();
 }
 
@@ -116,20 +121,20 @@ function changeSlide(delta) {
   showSlide(nextIndex);
 }
 
-function initDescriptionButtons() {
-  if (descriptionNavInitialized) return;
-  descriptionNavInitialized = true;
+function initNavigationButtons() {
+  if (navButtonsInitialized) return;
+  const prevButton = document.getElementById('slide-prev');
+  const nextButton = document.getElementById('slide-next');
 
-  document.querySelectorAll('.prev-slide').forEach(btn => {
-    btn.addEventListener('click', () => {
-      changeSlide(-1);
-    });
+  if (!prevButton || !nextButton) return;
+  navButtonsInitialized = true;
+
+  prevButton.addEventListener('click', () => {
+    changeSlide(-1);
   });
 
-  document.querySelectorAll('.next-slide').forEach(btn => {
-    btn.addEventListener('click', () => {
-      changeSlide(1);
-    });
+  nextButton.addEventListener('click', () => {
+    changeSlide(1);
   });
 }
 
@@ -150,80 +155,8 @@ function initKeyboardNavigation() {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  // Make all descriptions draggable
-  document.querySelectorAll(".description-draggable").forEach(desc => {
-    makeDraggable(desc);
-  });
-
   updateCountdown();
 });
-
-// Enable drag-and-drop on the description box
-function makeDraggable(el) {
-  let offsetX = 0;
-  let offsetY = 0;
-  let isDragging = false;
-  let elementSize = { width: 0, height: 0 };
-
-  const clamp = (value, min, max) => Math.min(Math.max(value, min), max);
-
-  const startDrag = (x, y) => {
-    const rect = el.getBoundingClientRect();
-    offsetX = x - rect.left;
-    offsetY = y - rect.top;
-    elementSize = { width: rect.width, height: rect.height };
-    isDragging = true;
-    el.style.zIndex = 3000;
-    el.classList.add('dragging');
-    document.body.style.touchAction = 'none'; // Prevent scrolling while dragging
-  };
-
-  const doDrag = (x, y) => {
-    if (!isDragging) return;
-    const maxLeft = Math.max(window.innerWidth - elementSize.width, 0);
-    const maxTop = Math.max(window.innerHeight - elementSize.height, 0);
-    const nextLeft = clamp(x - offsetX, 0, maxLeft);
-    const nextTop = clamp(y - offsetY, 0, maxTop);
-
-    el.style.left = `${nextLeft}px`;
-    el.style.top = `${nextTop}px`;
-    el.style.transform = 'none';
-  };
-
-  const endDrag = () => {
-    if (!isDragging) return;
-    isDragging = false;
-    el.classList.remove('dragging');
-    document.body.style.touchAction = ''; // Re-enable scroll
-  };
-
-  // Mouse support
-  el.addEventListener('mousedown', e => {
-    e.preventDefault();
-    startDrag(e.clientX, e.clientY);
-  });
-
-  document.addEventListener('mousemove', e => {
-    doDrag(e.clientX, e.clientY);
-  });
-
-  document.addEventListener('mouseup', endDrag);
-
-  // Touch support
-  el.addEventListener('touchstart', e => {
-    const touch = e.touches[0];
-    startDrag(touch.clientX, touch.clientY);
-  });
-
-  document.addEventListener('touchmove', e => {
-    if (!isDragging) return;
-    const touch = e.touches[0];
-    doDrag(touch.clientX, touch.clientY);
-    e.preventDefault(); // Prevent page scroll while dragging
-  }, { passive: false });
-
-  document.addEventListener('touchend', endDrag);
-}
 
 window.addEventListener('popstate', event => {
   if (!slideElements.length) return;

@@ -43,55 +43,6 @@
         <div class="slide">
             <div class="image-container">
                 <div class="slide-description description-draggable">
-                    <p><strong>About the DEMO</strong></p>
-                    <p>This interactive DEMO is structured as a series of scrollable slides, blending traditional
-                        narrative with immersive media. A draggable <strong>info-panel</strong> overlays each slide,
-                        providing context while allowing viewers to reveal layered visual content beneath. Navigation is
-                        built into the panel via <strong>Next/Prev buttons</strong>.</p>
-                        <p>You can Drag & Move 'About the DEMO' and Play video</p>
-                    <ul>
-                        <li>
-                            <p><strong>Slide 3</strong> embeds a live <strong>3D gallery</strong> via iframe, showcasing
-                                a digital installation inspired by Vermeer’s paintigs. It includes a direct link to the
-                                original project and a <strong>QR code</strong> for launching the gallery on mobile.</p>
-                        </li>
-                        <li>
-                            <p><strong>Slide 5</strong> presents the original <strong>WebGL/WebXR app</strong> used to
-                                generate the NFT collection. This app combines a real-time 3D environment with
-                                <strong>in-browser AR</strong>, enabling spatial interaction and digital sculpture
-                                slicing. It is accessible via link and <strong>best experienced on Android</strong>
-                                using the embedded QR code.
-                            </p>
-                        </li>
-                        <li>
-                            <p><strong>Slide 7</strong> features the <strong>Interactive NFT Viewer</strong> for the
-                                <em>Milkmaid’s Pitcher</em> collection. Visitors can browse all <strong>205 minted
-                                    NFTs</strong>, view associated metadata, and interact with the corresponding
-                                <strong>3D models</strong> in real time.
-                            </p>
-                        </li>
-                    </ul>
-                    <p>The DEMO blurs the boundaries between static documentation and live performance, inviting
-                        audiences to explore, manipulate, and move through digital space as part of the artwork itself.
-                    </p>
-
-                    <div class="description-nav">
-                        <button class="prev-slide" type="button">⟵ Prev</button>
-                        <button class="next-slide" type="button">Next ⟶</button>
-                    </div>
-                </div>
-
-                <video class="slide-video" controls preload="auto" playsinline>
-                    <source src="/demo-pitchers-compr.mp4" type="video/mp4" />
-                    Your browser does not support the video tag.
-                </video>
-
-
-            </div>
-        </div>
-        <div class="slide">
-            <div class="image-container">
-                <div class="slide-description description-draggable">
                     <h1>Born-Digital Genesis – From Concept to Code</h1>
                     Exploring the transformation of Vermeer’s The Milkmaid into a born-digital sculpture, this project
                     bridges classical art with contemporary digital expression. The pitcher, drawn from a quiet
@@ -269,6 +220,10 @@
 
     </div>
 
+    <div id="slide-arrows" aria-label="Slide navigation">
+        <button id="slide-prev" class="nav-arrow nav-arrow-left" type="button">⟵ Prev</button>
+        <button id="slide-next" class="nav-arrow nav-arrow-right" type="button">Next ⟶</button>
+    </div>
 
 
     <script type="module" src="/src/main.js"></script>

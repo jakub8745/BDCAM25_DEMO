@@ -141,6 +141,42 @@ button {
   }
 }
 
+#slide-arrows {
+  display: none;
+}
+
+#slide-arrows.active {
+  display: block;
+}
+
+.nav-arrow {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.65);
+  color: #fff;
+  border: 2px solid #fff;
+  border-radius: 999px;
+  padding: 12px 18px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  z-index: 3000;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.nav-arrow-left {
+  left: 20px;
+}
+
+.nav-arrow-right {
+  right: 20px;
+}
+
+.nav-arrow:hover {
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+}
+
 .image-99 {
   width: 99%;
   display: block;
@@ -194,78 +230,12 @@ button {
   display: block;
 }
 
-.slide-description {
-  position: absolute;
-  top: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  max-width: 95%;
-  padding: 1rem 2rem;
-  background: rgba(0, 0, 0, 0.7);
-  color: white;
-  font-size: 1.5rem;
-  border-radius: 10px;
-  z-index: 2000;
-  text-align: center;
-  cursor: move; /* 👈 Show that it's draggable */
-}
-
-/* Make sure .slide is relatively positioned for absolute text overlay */
 .slide {
   position: relative;
 }
-@media (max-width: 600px) {
-  .slide-description {
-    width: 90%;
-    font-size: 1rem;
-    padding: 0.5rem 0.5rem;
-  }
-}
-.description-nav {
-  margin-top: 1rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
-}
 
-.description-qrcode {
-  width: 70px;
-  height: 70px;
-  border: 2px solid white;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(255,255,255,0.3);
-}
-
-.image-column-container .description-qrcode {
-  width: 70px !important;
-  height: 70px !important;
-  object-fit: contain;
-  display: inline-block !important;
-}
-
-
-.description-nav button {
-  padding: 8px 16px;
-  font-size: 1rem;
-  background-color: #ffffff;
-  color: #000;
-  border: 2px solid black;
-  border-radius: 6px;
-  cursor: pointer;
-  font-weight: bold;
-  box-shadow: 2px 2px 5px rgba(0,0,0,0.4);
-}
-
-.description-nav button:hover {
-  background-color: #f0f0f0;
-}
 .slide-description {
-  cursor: grab;
-}
-
-.slide-description.dragging {
-  cursor: grabbing !important;
+  display: none !important;
 }
 /* All unvisited links */
 a {
